@@ -36,6 +36,35 @@ public class KodePos
         }
     }
 }
+public class DoorMachine
+{
+    public enum DoorState
+    {
+        Terkunci,
+        Terbuka
+    }
+
+    private DoorState currentState;
+
+    public DoorMachine()
+    {
+        currentState = DoorState.Terkunci;
+        Console.WriteLine("Pintu terkunci");
+    }
+
+    public void BukaPintu()
+    {
+        currentState = DoorState.Terbuka;
+        Console.WriteLine("Pintu tidak terkunci");
+    }
+
+    public void KunciPintu()
+    {
+        currentState = DoorState.Terkunci;
+        Console.WriteLine("Pintu terkunci");
+    }
+}
+
 
 class Program
 {
@@ -54,5 +83,10 @@ class Program
         Console.WriteLine("Kode pos untuk Kelurahan Kebonwaru: " + kodePos.getKodePos("Kebonwaru"));
         Console.WriteLine("Kode pos untuk Kelurahan Maleer: " + kodePos.getKodePos("Maleer"));
         Console.WriteLine("Kode pos untuk Kelurahan Samoja: " + kodePos.getKodePos("Samoja"));
+
+        DoorMachine door = new DoorMachine();
+
+        door.BukaPintu();
+        door.KunciPintu();
     }
 }
